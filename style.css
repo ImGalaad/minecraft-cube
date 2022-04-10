@@ -1,0 +1,118 @@
+/* 
+            ┌--------┬.
+            |`.      | `.                 ___    ____
+            |  `┬----+---┤               /   |  / / /
+            |   |    |   |              / /| | / / / 
+            ├---+----+   |             / ___ |/ / /  
+             `. |     `. |            /_/  |_/_/_/   
+               `┴--------┘
+                           Made with patorjk.com/software/taag/
+*/
+
+html, body {
+  height: 100%;
+  background: #272727;
+  overflow: hidden;
+  --cube-size : 250px; /* 𝗬𝗼𝘂 𝗰𝗮𝗻 𝗰𝗵𝗮𝗻𝗴𝗲 𝘁𝗵𝗲 𝘀𝗶𝘇𝗲 𝗵𝗲𝗿𝗲 */
+}
+.scene {
+  height: 100%;
+  display: flex;
+  perspective: 800px;
+  /*
+    𝗣𝗲𝗿𝘀𝗽𝗲𝗰𝘁𝗶𝘃𝗲
+    Isometric : none
+    Normal : 800px
+  */
+  align-items: center;
+  justify-content: center;
+}
+
+/* 
+            ┌--------┬.
+            |`.      | `.         ______
+            |  `┬----+---┤       / ____/___ _________  _____
+            |   |    |   |      / /_  / __ `/ ___/ _ \/ ___/
+            ├---+----+   |     / __/ / /_/ / /__/  __(__  ) 
+             `. |     `. |    /_/    \__,_/\___/\___/____/  
+               `┴--------┘
+                           Made with patorjk.com/software/taag/
+*/
+
+.cube {
+  width: var(--cube-size);
+  height: var(--cube-size);
+  position: relative;
+  transform-style: preserve-3d;
+  animation: rotation 10s linear infinite;
+  /*
+    𝗦𝗽𝗲𝗲𝗱
+    🐌 Slow : 50s
+    🐇 Normal : 10s
+    🏎️ Speedy boy : 5s
+    𝗔𝗻𝗶𝗺𝗮𝘁𝗶𝗼𝗻
+    Just turn : linear infinite
+    With return : infinite alternate
+  */
+}
+  
+@keyframes rotation {
+  0% {transform: rotateY(0deg);}
+  100% {transform: rotateY(720deg) rotateX(100deg);}
+  /* 
+    𝗧𝗿𝗮𝗻𝘀𝗳𝗼𝗿𝗺
+    Complete rotation : rotateY(720deg) rotateX(720deg)
+    Normal rotation : rotateY(720deg) rotateX(100deg)
+
+    🌎 Earth rotation : rotateY(720deg) rotateX(23.44deg)
+    🌗 Moon rotation : rotateY(720deg) rotateX(1.54deg)
+    
+    Y rotation : rotateY(720deg)
+    X rotation : rotateY(720deg)
+    𝘡 𝘳𝘰𝘵𝘢𝘵𝘪𝘰𝘯 𝘪𝘴 𝘯𝘰𝘵 𝘳𝘦𝘤𝘰𝘮𝘮𝘦𝘯𝘥𝘦𝘥
+  */
+
+}
+
+/* 𝗬𝗼𝘂 𝗰𝗮𝗻 𝗰𝗵𝗮𝗻𝗴𝗲 𝘁𝗵𝗲 𝘁𝗲𝘅𝘁𝘂𝗿𝗲 𝗼𝗳 𝘁𝗵𝗲 𝗳𝗮𝗰𝗲𝘀 𝗵𝗲𝗿𝗲 */
+
+.cube_face {
+  position: absolute;
+  width: var(--cube-size);
+  height: var(--cube-size);
+  background-size: cover;
+}
+  
+.cube_face_left {
+  background-image: url('diamond.png');
+  transform: translateX(calc(-1 * var(--cube-size)/2))
+  rotateY(90deg);
+}
+  
+.cube_face_right {
+  background-image: url('diamond.png');
+  transform: translateX(calc(var(--cube-size)/2))
+  rotateY(90deg);
+}
+  
+.cube_face_bottom {
+  background-image: url('diamond.png');
+  transform: translateY(calc(var(--cube-size)/2))
+  rotateX(90deg);
+}
+  
+.cube_face_top {
+  background-image: url('diamond.png');
+  transform: translateY(calc(-1 * var(--cube-size)/2))
+  rotateX(90deg);
+}
+  
+.cube_face_back {
+  background-image: url('diamond.png');
+  transform: translateZ(calc(-1 * var(--cube-size)/2));
+}
+  
+.cube_face_front {
+  background-image: url('diamond.png');
+  transform: translateZ(calc(var(--cube-size)/2));
+}
